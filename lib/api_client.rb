@@ -238,7 +238,9 @@ module AmzSpApi
         # models, e.g. Pet
         begin
           AmzSpApi.constants.map{|c| AmzSpApi.const_get(c)}.select{|sub| sub.kind_of?(Module)}.detect{|sub| sub.const_defined?(return_type)}.const_get(return_type).build_from_hash(data)
-        rescue NoMethodError
+        rescue NoMethodError => e
+          Rails.logger.info e.message + ". will return data: #{data}"
+          puts "returning data: #{data}"
           data
         end
       end
