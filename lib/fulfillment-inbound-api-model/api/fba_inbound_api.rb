@@ -484,9 +484,9 @@ module AmzSpApi::FulfillmentInboundApiModel
       query_params[:'PageType'] = page_type
       query_params[:'LabelType'] = label_type
       query_params[:'NumberOfPackages'] = opts[:'number_of_packages'] if !opts[:'number_of_packages'].nil?
-      query_params[:'PackageLabelsToPrint'] = opts[:'package_labels_to_print'] if !opts[:'package_labels_to_print'].nil?
+      # query_params[:'PackageLabelsToPrint'] = opts[:'package_labels_to_print'] if !opts[:'package_labels_to_print'].nil?
 
-      # query_params[:'PackageLabelsToPrint'] = @api_client.build_collection_param(opts[:'package_labels_to_print'], :csv) if !opts[:'package_labels_to_print'].nil?
+      query_params[:'PackageLabelsToPrint'] = @api_client.build_collection_param(opts[:'package_labels_to_print'], :csv) if !opts[:'package_labels_to_print'].nil?
       query_params[:'NumberOfPallets'] = opts[:'number_of_pallets'] if !opts[:'number_of_pallets'].nil?
       query_params[:'PageSize'] = opts[:'page_size'] if !opts[:'page_size'].nil?
       query_params[:'PageStartIndex'] = opts[:'page_start_index'] if !opts[:'page_start_index'].nil?
